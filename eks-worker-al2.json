@@ -2,7 +2,7 @@
   "variables": {
     "kubernetes_version": "1.12",
     "aws_region": "us-west-2",
-    "ami_name": "amazon-eks-node-1.12-{{timestamp}}",
+    "ami_name": "amazon-eks-node-{{timestamp}}",
     "binary_bucket_name": "amazon-eks",
     "binary_bucket_region": "us-west-2",
     "binary_bucket_path": "",
@@ -69,7 +69,7 @@
           "cni_version": "{{ user `cni_version`}}",
           "cni_plugin_version": "{{ user `cni_plugin_version`}}"
       },
-      "ami_name": "{{user `ami_name`}}",
+      "ami_name": "amazon-eks-node-{{user `kubernetes_version`}}-{{timestamp}}",
       "ami_description": "EKS Kubernetes Worker AMI with AmazonLinux2 image (k8s: {{ user `binary_bucket_path`}}, docker:{{ user `docker_version`}})"
     }
   ],
